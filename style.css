@@ -1,0 +1,1050 @@
+/* ========================================================================== */
+/* =============================== RESET ==================================== */
+/* ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========================================================================== */
+/* =============================== BASE ===================================== */
+/* ========================================================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #1a1a1a;
+  color: #e6e6e6;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+}
+
+p, a {
+  font-size: 1.1em;
+  color: #ffffff;
+}
+
+a:hover {
+  color: #ff4655;
+  text-decoration: underline;
+}
+
+/* ========================================================================== */
+/* =============================== HEADER =================================== */
+/* ========================================================================== */
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  border-bottom: 3px solid #ff4655;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  z-index: 1000;
+}
+
+header .logo {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.6em;
+  color: #ff4655;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  height: 40px;
+  width: auto;
+  margin-right: 10px;
+  filter: drop-shadow(0 0 5px rgba(255, 70, 85, 0.7));
+  animation: glowLogo 3s ease-in-out infinite alternate;
+}
+
+/* ===== Navigation ===== */
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+header nav ul li a {
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 3px;
+  transition: color 0.3s;
+}
+
+header nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ff4655;
+  transition: width 0.3s;
+}
+
+header nav ul li a:hover {
+  color: #ff4655;
+}
+
+header nav ul li a:hover::after {
+  width: 100%;
+}
+
+header nav ul li a.active {
+  color: #ff4655;
+}
+
+header nav ul li a.active::after {
+  width: 100%;
+}
+
+/* ===== Menu Hamburger ===== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 35px;
+  height: 30px;
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  z-index: 1100;
+}
+
+.menu-toggle span {
+  height: 4px;
+  width: 100%;
+  background: #ff4655;
+  border-radius: 5px;
+  margin: 4px 0;
+  transition: all 0.4s;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ========================================================================== */
+/* =============================== HERO ===================================== */
+/* ========================================================================== */
+.hero {
+  height: 100vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../public/image-clip/valoranthero.jpg") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+}
+
+.hero h1 {
+  border: none;
+  color: #ffffff;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  text-shadow: 0 0 8px rgba(255, 70, 85, 0.4);
+  animation: subtleFade 3s ease-out forwards;
+}
+
+.hero h1::after,
+.page-accueil .hero h1::after {
+  display: none !important;
+  background: none !important;
+  content: none !important;
+}
+
+.hero p {
+  font-size: 1.2em;
+  color: #dddddd;
+  max-width: 700px;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+}
+/* Correction centrage hero */
+.hero h1 {
+  margin: 0 auto 20px;
+  width: auto;
+  text-align: center;
+}
+
+
+/* ========================================================================== */
+/* =============================== BOUTONS ================================== */
+/* ========================================================================== */
+.btn {
+  color: #ff4655;
+  text-decoration: none;
+  border: 1px solid #ff4655;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 20px;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background-color: #ff4655;
+  color: #111;
+  text-decoration: none !important;
+}
+
+.btn-voir-gameplay {
+  animation: pulseBtn 2s infinite ease-in-out;
+}
+
+/* ========================================================================== */
+/* =============================== CONTAINERS =============================== */
+/* ========================================================================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 40px 60px;
+}
+
+section {
+  text-align: center;
+}
+
+/* ========================================================================== */
+/* =============================== TITRES =================================== */
+/* ========================================================================== */
+h1 {
+  font-family: 'Oswald', sans-serif;
+  color: #ff4655;
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: 4px solid #ff4655;
+  display: inline-block;
+  margin: 100px auto 40px;
+  padding-bottom: 10px;
+  font-size: 2.8em;
+}
+
+h2, h3, h4 {
+  font-family: 'Oswald', sans-serif;
+  color: #ff4655;
+  text-transform: uppercase;
+  border-bottom: 2px solid #ff4655;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+.container h2 {
+  margin-top: 40px; /* espace au-dessus du h2 */
+  margin-bottom: 20px; /* espace en dessous, déjà existant */
+  display: block; /* pour éviter le problème de inline-block si besoin */
+}
+
+/* ========================================================================== */
+/* =============================== PAGE ACCUEIL ============================= */
+/* ========================================================================== */
+.page-accueil h1 {
+  border: none;
+  position: relative;
+  padding-bottom: 20px;
+  margin: 60px 0 30px;
+}
+
+.page-accueil h1::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 4px;
+  background-color: #ff4655;
+}
+
+/* ========================================================================== */
+/* =============================== VIDEO ==================================== */
+/* ========================================================================== */
+.video-container {
+  max-width: 900px;
+  margin: 30px auto;
+  border: 3px solid #ff4655;
+  box-shadow: 0 0 20px rgba(255, 70, 85, 0.6);
+  border-radius: 8px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* ========================================================================== */
+/* =============================== TABLEAUX ================================= */
+/* ========================================================================== */
+.table-container {
+  width: 90%;
+  margin: 0 auto 50px;
+  background-color: #1b1b1b;
+  border: 2px solid #ff4655;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 70, 85, 0.3);
+  overflow: hidden;
+  padding: 0;
+  max-width: 900px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Poppins', sans-serif;
+  color: #e6e6e6;
+  font-size: 0.95em;
+}
+
+thead {
+  background-color: #ff4655;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+th, td {
+  padding: 14px 12px;
+  text-align: center;
+}
+
+tbody tr {
+  background-color: #232323;
+  transition: background 0.3s;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #1e1e1e;
+}
+
+tbody tr:hover {
+  background-color: #333;
+}
+
+.rank-icon {
+  height: 28px;
+  width: auto;
+  vertical-align: middle;
+}
+
+/* Mini leaderboard */
+.leaderboard-section {
+  background-color: #1a1a1a;
+  border: 2px solid #ff4655;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 70, 85, 0.4);
+  padding: 30px;
+  max-width: 700px;
+  margin: 50px auto;
+}
+
+.leaderboard {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+  color: #e6e6e6;
+}
+
+.leaderboard th {
+  background-color: #ff4655;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 10px;
+}
+
+.leaderboard td {
+  background-color: #2a2a2a;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
+.leaderboard tr:nth-child(odd) td {
+  background-color: #1f1f1f;
+}
+
+.leaderboard tr:hover td {
+  background-color: #333;
+}
+
+/* ========================================================================== */
+/* =============================== CARTES DE JEUX =========================== */
+/* ========================================================================== */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.game-card {
+  background-color: #1f1f1f;
+  border: 2px solid #ff4655;
+  border-radius: 12px;
+  text-align: center;
+  transform: scale(0.95);
+  transition: 0.3s;
+}
+
+.game-card:hover {
+  transform: scale(1);
+  box-shadow: 0 0 25px rgba(255, 70, 85, 0.6);
+}
+
+.game-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.game-card h2 {
+  color: #ff4655;
+  margin: 15px 0 5px;
+}
+
+.game-card p {
+  color: #ccc;
+  margin-bottom: 8px;
+}
+
+/* ========================================================================== */
+/* =============================== SECTION COMMUNAUTÉ ======================= */
+/* ========================================================================== */
+.communaute {
+  max-width: 900px;
+  margin: 60px auto;
+  text-align: left;
+  background: #1b1b1b;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 70, 85, 0.2);
+  border: 1px solid rgba(255, 70, 85, 0.3);
+}
+
+.communaute h2 {
+  text-align: left;
+  border-bottom: 3px solid #ff4655;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.communaute p {
+  color: #ddd;
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.communaute a {
+  color: #4da6ff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.communaute a:hover {
+  color: #ff4655;
+  text-decoration: underline;
+}
+
+/* ========================================================================== */
+/* =============================== ACTUS SECTION ============================ */
+/* ========================================================================== */
+.actus-section {
+  background-color: #1a1a1a;
+  color: #e6e6e6;
+  padding: 80px 50px 60px;
+  box-sizing: border-box;
+}
+
+.actus-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  gap: 10px;
+}
+
+.actus-header h2 {
+  font-family: 'Oswald', sans-serif;
+  color: #ff4655;
+  font-size: 2.2em;
+  margin: 0;
+  border: none;
+}
+
+.link-actus {
+  color: #ff4655;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.95em;
+}
+
+.link-actus:hover {
+  text-decoration: underline;
+}
+
+.actus-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.actus-card {
+  background-color: #1f1f1f;
+  border: 2px solid rgba(255, 70, 85, 0.18);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeUpCards 1s ease-out forwards;
+}
+
+.actus-card:nth-child(1) { animation-delay: 0.2s; }
+.actus-card:nth-child(2) { animation-delay: 0.4s; }
+.actus-card:nth-child(3) { animation-delay: 0.6s; }
+
+.actus-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.7);
+}
+
+.actus-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.95);
+}
+
+.actus-info {
+  padding: 20px;
+  text-align: left;
+}
+
+.actus-meta {
+  color: #ff4655;
+  font-size: 0.9em;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.actus-info h3 {
+  color: #ffffff;
+  font-size: 1.1em;
+  margin: 0 0 8px;
+}
+
+.actus-info p {
+  color: #cccccc;
+  margin: 0 0 10px;
+  line-height: 1.4;
+}
+
+/* ========================================================================== */
+/* =============================== FORMULAIRE DE CONTACT ==================== */
+/* ========================================================================== */
+.form-section {
+  max-width: 600px;
+  margin: 120px auto 50px;
+  background: #1f1f1f;
+  padding: 30px;
+  border: 3px solid #ff4655;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 70, 85, 0.5);
+}
+
+.form-section h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  font-weight: 600;
+  margin: 10px 0 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: 2px solid #ff4655;
+  border-radius: 5px;
+  background: #2a2a2a;
+  color: #fff;
+}
+
+.contact-form button {
+  margin-top: 20px;
+  padding: 12px;
+  background: #ff4655;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background: #e63946;
+}
+
+/* ========================================================================== */
+/* =============================== FOOTER =================================== */
+/* ========================================================================== */
+footer {
+  background-color: #111;
+  text-align: center;
+  padding: 30px 20px;
+  border-top: 3px solid #ff4655;
+  color: #ff4655;
+  margin-top: 80px;
+}
+
+footer .reseaux {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 15px 0;
+}
+
+footer .reseaux img {
+  width: 36px;
+  height: 36px;
+  filter: brightness(0.7) invert(1);
+  transition: transform 0.3s;
+}
+
+footer .reseaux a:hover img {
+  transform: scale(1.2);
+}
+
+/* ========================================================================== */
+/* =============================== RESPONSIVE =============================== */
+/* ========================================================================== */
+@media (max-width: 1024px) {
+  h1 { font-size: 2.2em; }
+  .game-card img { height: 160px; }
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    width: 100%;
+    background-color: #111;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+
+  nav.active {
+    display: block;
+    animation: fadeIn 0.4s ease-in-out;
+  }
+
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+    padding: 5px 0;
+    gap: 10px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .actus-card img {
+    height: 180px;
+  }
+
+  .actus-section {
+    padding: 80px 20px 120px;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .game-card img {
+    height: 150px;
+  }
+}
+
+/* ====== HERO - Scroll (doublon volontaire préservé) ====== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ====== MINI LEADERBOARD (doublons préservés) ====== */
+.leaderboard-section {
+  background-color: #1a1a1a;
+  border: 2px solid #ff4655;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 70, 85, 0.4);
+  padding: 30px;
+  max-width: 700px;
+  margin: 50px auto;
+}
+
+/* ====== TITRES GLOBAUX (doublons préservés) ====== */
+h1 {
+  font-family: 'Oswald', sans-serif;
+  color: #ff4655;
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: 4px solid #ff4655;
+  display: block; /* ✅ au lieu de inline-block */
+  margin: 100px auto 40px;
+  padding-bottom: 10px;
+  font-size: 2.8em;
+  width: fit-content; /* ✅ pour garder la largeur du texte */
+}
+
+
+h2, h3, h4 {
+  font-family: 'Oswald', sans-serif;
+  color: #ff4655;
+  text-transform: uppercase;
+  border-bottom: 2px solid #ff4655;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+/* ====== PAGE CLASSEMENT ====== */
+.page-classement main {
+  margin-top: 80px;
+}
+
+/* ====== LEADERBOARD ====== */
+.table-container {
+  width: 90%;
+  margin: 0 auto 50px;
+  background-color: #1b1b1b;
+  border: 2px solid #ff4655;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 70, 85, 0.3);
+  overflow: hidden;
+  padding: 0;
+  max-width: 900px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Poppins', sans-serif;
+  color: #e6e6e6;
+  font-size: 0.95em;
+}
+
+thead {
+  background-color: #ff4655;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+th, td {
+  padding: 14px 12px;
+  text-align: center;
+}
+
+tbody tr {
+  background-color: #232323;
+  transition: background 0.3s;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #1e1e1e;
+}
+
+tbody tr:hover {
+  background-color: #333;
+}
+
+/* ====== LIEN TRACKER.GG ====== */
+.table-container + p a {
+  color: #41a3ff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.table-container + p a:hover {
+  color: #41a3ff;
+  text-decoration: underline;
+}
+
+/* ====== LIENS GÉNÉRAUX - rappel ====== */
+a {
+  color: #4da6ff;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #ff4655;
+}
+
+/* Liens des jeux (dans les cartes) restent blancs */
+.cards-container a {
+  color: #fff;
+}
+
+.cards-container a:hover {
+  color: #ff4655;
+}
+
+/* ====== CARTES LÉGÈREMENT RÉDUITES ====== */
+.game-card {
+  transform: scale(0.95);
+  transition: 0.3s;
+}
+
+.game-card:hover {
+  transform: scale(1);
+}
+
+/* ===== SECTION COMMUNAUTÉ (Valorant) - rappel ====== */
+.communaute {
+  max-width: 900px;
+  margin: 60px auto;
+  text-align: left;
+  background: #1b1b1b;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 70, 85, 0.2);
+  border: 1px solid rgba(255, 70, 85, 0.3);
+}
+
+/* ====== SECTION DERNIÈRES ACTUS (espace avant footer) - rappel ====== */
+.actus-section {
+  background-color: #1a1a1a;
+  color: #e6e6e6;
+  padding: 80px 50px 60px;
+  box-sizing: border-box;
+}
+
+/* garde de l'espace entre section et footer si besoin */
+footer {
+  margin-top: 80px;
+}
+
+/* ===== ANIMATIONS CSS ===== */
+
+/* --- Apparition du texte du hero --- */
+.hero-content {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1.2s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Pulsation du bouton --- */
+.btn-voir-gameplay {
+  animation: pulseBtn 2s infinite ease-in-out;
+}
+
+@keyframes pulseBtn {  
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(255, 70, 85, 0);
+    transform: scale(1);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(255, 70, 85, 0.6);
+    transform: scale(1.05);
+  }
+}
+
+/* --- Effet lumineux sur le logo --- */
+.header-logo {
+  animation: glowLogo 3s ease-in-out infinite alternate;
+}
+
+@keyframes glowLogo {
+  from {
+    filter: drop-shadow(0 0 5px rgba(255, 70, 85, 0.6));
+  }
+
+  to {
+    filter: drop-shadow(0 0 15px rgba(255, 70, 85, 1));
+  }
+}
+
+/* --- Apparition fluide de la vidéo --- */
+/* (déjà défini plus haut dans .video-container mais conservé ici pour cohérence) */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Animation des cartes d’actualités au chargement --- */
+.actus-card {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeUpCards 1s ease-out forwards;
+}
+
+@keyframes fadeUpCards {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Délai progressif pour chaque carte */
+.actus-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.actus-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.actus-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* --- Animation du titre principal (Hero H1) - version douce --- */
+.hero h1 {
+  animation: subtleFade 3s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+  text-shadow: 0 0 8px rgba(255, 70, 85, 0.4);
+}
+
+@keyframes subtleFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    text-shadow: 0 0 10px rgba(255, 70, 85, 0.3);
+  }
+}
+
+/* Désactiver le soulignement sur les boutons au survol */
+.btn:hover,
+.btn-voir-gameplay:hover {
+  text-decoration: none !important;
+}
+
+/* ===== Keyframes pour le fadeIn du nav responsive ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* === FIX RESPONSIVE ACTUS === */
+@media (max-width: 900px) {
+  .actus-section {
+    padding: 60px 20px; /* Réduction des marges latérales */
+    text-align: center; /* Centrer le contenu */
+  }
+
+  .actus-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .actus-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+  }
+
+  .actus-card {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .actus-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .actus-info {
+    text-align: left;
+    padding: 15px;
+  }
+}
+.intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 10px auto 30px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
