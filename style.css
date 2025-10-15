@@ -151,7 +151,7 @@ header nav ul li a.active::after {
   height: 100vh;
   background:
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("../public/image-clip/valoranthero.jpg") center/cover no-repeat;
+    url("valoranthero.jpg") center/cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1047,4 +1047,5 @@ footer {
   color: #ffffff;
   line-height: 1.6;
 }
+
 
